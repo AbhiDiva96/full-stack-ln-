@@ -26,10 +26,10 @@ function LinkedinHeader(){
   // const totalMessageCount  = useRecoilValue(messageCount)
   // const totalNotificationCount = useRecoilValue(notificationCount);
 
-  // const overAllCount = useRecoilValue(totalNotificationSelector);
 
 
 const networkCount = useRecoilValue(notifications)
+const overAllCount = useRecoilValue(totalNotificationSelector);
 
    
 
@@ -39,12 +39,16 @@ const networkCount = useRecoilValue(notifications)
 
   return <div>
 
-       <button>Home</button>
+       <button>Home</button> <span />
         <button>My Network ({networkCount.network >= 100 ? "99+" : networkCount.network })</button>
-        <button>Job ({networkCount.jobs})</button>
+       <span /> <span />
+        <button>Job ({networkCount.jobs})</button>  <span />
       <button>Messaging ({networkCount.messaging})</button>
+      <span /> <span />
       <button>notifications ({networkCount.notifications >= 100 ? "99+" : networkCount.notifications})</button>
-      {/* <button>Me* ({totalNotificationCount})</button> */}
+      <span /> <span />
+      <button>Me* ({overAllCount})</button>
+      <span /> <span />
   </div>
 
 }
